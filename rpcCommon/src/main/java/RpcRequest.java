@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
  */
 public class RpcRequest {
     String requestId;
-    Class interfaceName;
+    String interfaceName;
     String methodName;
     Object[] args;
     Class[] parameterTypes;
@@ -20,11 +20,11 @@ public class RpcRequest {
         this.requestId = requestId;
     }
 
-    public Class getInterfaceName() {
+    public String getInterfaceName() {
         return interfaceName;
     }
 
-    public void setInterfaceName(Class interfaceName) {
+    public void setInterfaceName(String interfaceName) {
         this.interfaceName = interfaceName;
     }
 

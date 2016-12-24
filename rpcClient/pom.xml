@@ -17,6 +17,11 @@
             <artifactId>rpcCommon</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${version.cglib}</version>
+        </dependency>
 
     </dependencies>
 
