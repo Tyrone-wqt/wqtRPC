@@ -13,7 +13,8 @@ public class RpcServer {
     private String serverAddress = "127.0.0.1";
 
     public static void main(String[] args) {
-
+        RpcServer server = new RpcServer();
+        server.bind();
     }
 
     public void bind() {
@@ -29,7 +30,8 @@ public class RpcServer {
                 @Override
                 protected void initChannel(NioServerSocketChannel nioServerSocketChannel) throws Exception {
                     ChannelPipeline pipeline = nioServerSocketChannel.pipeline();
-
+                    pipeline.addLast(new RpcDecoder(RpcRequest.class));
+                    pipeline.addLast(new RpcEncoder(RpcResponse.class));
                 }
             });
             bootstrap.childOption(ChannelOption.SO_KEEPALIVE, true);
